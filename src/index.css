@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+:root {
+  font-size: 12px;
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+body {
+  overflow-x: hidden;
+  font-family: "League Spartan", sans-serif;
+}
+
+button,
+a {
+  all: unset;
+}
+
+.row > * {
+  padding-right: 0 !important;
+}
+
+main {
+  min-height: 100vh;
+}
+.navbar {
+  top: 30px;
+  left: 30px;
+}
+.nav-link {
+  position: relative;
+  font-size: 1.5rem;
+  width: fit-content;
+  padding: 0 !important;
+}
+.nav-link::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background-color: var(--White);
+  transition: width 0.3s linear;
+}
+.nav-link:hover::before {
+  width: 100%;
+}
+.offcanvas {
+  height: fit-content;
+  width: 100vw !important;
+}
+#about,
+#furniture {
+  padding-block: 4rem;
+}
+
+#shop-now:hover {
+  transition: 0.3s linear;
+
+  color: var(--Dark-Gray) !important;
+}
+#shop-now:hover svg path {
+  transition: 0.3s linear;
+  fill: var(--Dark-Gray) !important;
+}
+#arrows {
+  right: -195px;
+  z-index: 22;
+}
+
+#arrows button {
+  width: 90px;
+  border-radius: 0;
+  transition: background 0.3s linear;
+  background-color: var(--Black);
+}
+
+#arrows button:hover {
+  background-color: var(--Very-Dark-Gray);
+}
+
+#shop-now {
+  cursor: pointer;
+  letter-spacing: 12px;
+}
+
+#furniture h2 {
+  letter-spacing: 10px;
+}
+
+@media (width>=992px) {
+  #arrows {
+    right: -287px;
+  }
+  #arrows button {
+    width: 70px;
+  }
+}
+@media (width<768px) {
+  #arrows {
+    right: 0;
+    z-index: 0;
+    height: 50px;
+  }
+  #arrows button {
+    width: 60px;
+  }
+  .navbar {
+    left: 0;
+    width: 100%;
+    position: absolute !important;
+  }
+  .nav-link {
+    color: var(--Black) !important;
+    text-transform: lowercase !important;
+  }
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
